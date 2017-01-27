@@ -160,7 +160,7 @@ describe('$httpBackend', function() {
       expect(response).toBe(null);
       expect(headers).toBe(null);
       expect(statusText).toBe('');
-      expect(xhrStatus).toBe('Request Aborted');
+      expect(xhrStatus).toBe('abort');
     });
     $backend('GET', '/url', null, callback, {}, 2000);
     xhr = MockXhr.$$lastInstance;
@@ -180,7 +180,7 @@ describe('$httpBackend', function() {
       expect(response).toBe(null);
       expect(headers).toBe(null);
       expect(statusText).toBe('');
-      expect(xhrStatus).toBe('Request Timed Out');
+      expect(xhrStatus).toBe('timeout');
     });
     $backend('GET', '/url', null, callback, {});
     xhr = MockXhr.$$lastInstance;
